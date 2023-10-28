@@ -54,32 +54,45 @@ button:hover {
 
 /* !!!!! Search bar !!!!! */
 #search-bar {
-  text-align: center;
-  width: 20rem;
+  grid-area: search;
+  width: 100%;
+  margin: auto;
 }
 
 /* !!!!! Store section !!!!! */
 #store-container {
   grid-area: store;
-  width: 100%;
-  margin: auto auto auto 2.5%;
+  /* width: 100%; */
+  margin: auto 2.5% auto 2.5%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  align-content: stretch;
+  flex-flow: row wrap;
 }
 
 
 .store-item {
-  width: 33%;
-  max-height: auto;
-  min-height: 30%;
+  width: 30%;
+  flex: 1 1 auto;
+
 }
+
+.store-item img {
+  width: 70%;
+  height: 70%;
+}
+
+
+
+
+
+
 
 /* !!!!! Cart section !!!!! */
 
 #cart {
   grid-area: cart;
+  margin: 3%;
 }
 
 header {
@@ -88,6 +101,9 @@ header {
   width: 100%;
 }
 
+
+
+/* !!!!! Mobile breakpoint !!!!! */
 
 @media only screen and (max-width: 687px) {
 
@@ -121,3 +137,9 @@ header {
   }
 
 }
+
+/* @media only screen and (max-width: 920px) {
+  #store-container {
+    flex-flow: column;
+  }
+} */
