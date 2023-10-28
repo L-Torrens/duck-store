@@ -26,13 +26,24 @@ body {
     "store store cart"
     "foot foot foot"
   ;
+  text-align: center;
 }
 
 img {
-  display: inline;
+  display: inline-block;
+  width: 100%;
 }
 
+button {
+  background-color: blue;
+  color: azure;
+  border-radius: 20%;
+  margin: .3rem 0;
+}
 
+button:hover {
+  transform: scale(1.5);
+}
 
 
 
@@ -40,13 +51,20 @@ img {
 /* !!!!! Store section !!!!! */
 #store-container {
   grid-area: store;
-  width: 100%;
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
+
+.store-item {
+  width: 30%;
+  max-height: auto;
+  min-height: 30%;
+}
 
 /* !!!!! Cart section !!!!! */
 
