@@ -17,6 +17,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: auto;
+  background-color: #8DA1B9;
   display: grid;
   grid-template-areas:
     "head head head"
@@ -28,9 +29,13 @@ body {
   ;
 }
 
-img {
-  display: inline-block;
+header {
+  grid-area: head;
+  padding: auto;
+  height: 100%;
   width: 100%;
+  background-color: #DBC7BE;
+  text-align: center;
 }
 
 button {
@@ -54,61 +59,135 @@ button:hover {
 
 /* !!!!! Search bar !!!!! */
 #search-bar {
+  grid-area: search;
+  height: 100%;
+  width: 100%;
+  padding: 2%;
+  margin: auto;
   text-align: center;
-  width: 20rem;
+  background-color: #EF959C;
+}
+
+#search-bar input {
+  width: 80%;
+  height: 60%;
+  font-size: larger;
+  opacity: 50%;
+}
+
+#search-bar input:focus {
+  opacity: 100%;
+}
+
+#search-btn {
+  transform: none;
 }
 
 /* !!!!! Store section !!!!! */
 #store-container {
   grid-area: store;
-  width: 100%;
-  margin: auto auto auto 2.5%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
 
 .store-item {
-  width: 33%;
-  max-height: auto;
-  min-height: 30%;
+  width: 30%;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid gray;
+  background-color: #95ADB6;
+  font-size: larger;
+  margin: 0.2%;
 }
+
+.store-item img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+
+
+
+
+
 
 /* !!!!! Cart section !!!!! */
 
 #cart {
   grid-area: cart;
+  margin: 3%;
+  background-color: #CBB3BF;
+  border: 2px solid #EF959C;
 }
 
-header {
-  grid-area: head;
-  height: 10%;
+
+
+/* !!!!! Footer !!!!! */
+footer {
+  grid-area: foot;
+  text-align: center;
+  background-color: #DBC7BE;
   width: 100%;
 }
 
+/* !!!!! Mobile breakpoint !!!!! */
 
 @media only screen and (max-width: 687px) {
 
+  header {
+    position: fixed;
+    margin-bottom: 10%;
+    height: 5%;
+    top: 0;
+
+  }
+
+  #search-bar {
+    padding: 2%;
+    position: fixed;
+    z-index: 2;
+    top: 4%;
+    max-height: 4%;
+    background-color: #EF959C;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #search-bar input {
+    height: 2rem;
+    font-size: large;
+  }
+
   #store-container {
+    margin-top: 20%;
+    margin-bottom: 5%;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    flex-flow: column wrap;
   }
 
   .store-item {
     width: 80%;
+    margin: 1%;
+    font-size: larger;
   }
 
+
   #cart {
-    background-color: rgba(46, 138, 199, 0.8);
+    background-color: rgba(46, 138, 199, 0.4);
     z-index: 2;
     position: fixed;
-    right: 2.5%;
-    top: 2.5%;
+    right: 0;
+    top: 7%;
+    padding: .5%;
+    text-align: right;
   }
 
   .price,
@@ -118,6 +197,23 @@ header {
 
   button {
     font-size: larger;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  button {
+    font-size: medium;
+  }
+
+  #store-container {
+    min-height: 80%;
   }
 
 }
