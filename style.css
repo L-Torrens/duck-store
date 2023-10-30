@@ -17,7 +17,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: auto;
-  background-color: none;
+  background-color: #99C2A240;
   display: grid;
   grid-template-areas:
     "head head head"
@@ -32,7 +32,7 @@ body {
 
 header {
   grid-area: head;
-  padding: 50px;
+  padding: 25px;
   height: 100%;
   width: 100%;
   background-image: url('./Resources/Images/Duck-Banner2.png');
@@ -40,8 +40,14 @@ header {
   text-align: center;
   font-size: 30px;
   color: white;
+  display: flex;
 }
 
+#header-img {
+  width: 15%;
+  display: inline;
+  justify-self: left;
+}
 
 button {
   background-color: #7A918D;
@@ -92,9 +98,12 @@ button:hover {
 /* !!!!! Search bar !!!!! */
 #search-bar {
   grid-area: search;
+  display: inline-block;
   height: 40%;
   width: 100%;
   text-align: center;
+  padding-top: .3rem;
+ 
 }
 
 #search-bar input {
@@ -111,7 +120,9 @@ button:hover {
 
 #search-btn {
   transform: none;
-  height: 60%;
+  margin: 0;
+  padding: 0;
+  
 }
 
 /* !!!!! Store section !!!!! */
@@ -159,32 +170,24 @@ button:hover {
 footer {
   grid-area: foot;
   text-align: center;
-  background-color: #DBC7BE;
+  background-color: #E6BEAE70;
   width: 100%;
 }
 
 /* !!!!! Mobile breakpoint !!!!! */
 
-@media only screen and (max-width: 687px) {
-
-  header {
-    position: fixed;
-    margin-bottom: 10%;
-    height: 5%;
-    top: 0;
-
-  }
+@media only screen and (max-width: 750px) {
 
   #search-bar {
     padding: 2%;
-    position: fixed;
-    z-index: 2;
-    top: 4%;
-    max-height: 4%;
-    background-color: #EF959C;
     display: flex;
     justify-items: center;
     align-items: center;
+    margin-top: .65rem;
+  }
+
+  .desktop {
+    display: none;
   }
 
   #search-bar input {
@@ -213,7 +216,7 @@ footer {
     z-index: 2;
     position: fixed;
     right: 0;
-    top: 7%;
+    top: 40%;
     padding: .5%;
     text-align: right;
   }
